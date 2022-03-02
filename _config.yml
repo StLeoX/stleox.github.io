@@ -12,7 +12,7 @@ baseurl: ""
 # SNS settings
 RSS: true
 github_username:  StLeoX
-zhihu_username:   StLeoX
+zhihu_username:   stleox
 gitee_username:   StLeoX
 
 
@@ -20,7 +20,7 @@ gitee_username:   StLeoX
 highlighter: rouge
 permalink: pretty
 paginate: 10
-exclude: ["package.json","README.md","README.zh.md"]
+exclude: ["less","node_modules","Gruntfile.js","package.json","README.md","README.zh.md"]
 anchorjs: false
 timezone: CN
 
@@ -42,6 +42,7 @@ kramdown:
 
 # Netease settings
 netease_comment: false
+plugins: [jekyll-paginate]
 
 
 # Analytics settings
@@ -56,7 +57,7 @@ sidebar: false
 # Featured Tags
 featured-tags: true                     # whether or not using Feature-Tags
 featured-condition-size: 1              # A tag will be featured if the size of it is more than this condition value
-
+tags: ["C++", "Rust", "Python", "Async", "FP"]
 
 # Progressive Web Apps
 chrome-tab-theme-color: "#000000"
