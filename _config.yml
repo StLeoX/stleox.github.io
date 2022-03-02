@@ -11,6 +11,7 @@ baseurl: ""
 
 # SNS settings
 RSS: true
+github_username:  StLeoX
 zhihu_username:   StLeoX
 gitee_username:   StLeoX
 
