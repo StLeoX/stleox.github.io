@@ -1,0 +1,75 @@
+# Site settings
+title: StLeoX's Blog
+SEOTitle: StLeoX的博客 | StLeoX's Blog
+header-img: images/bg.jpg
+email: 1228354389@qq.com
+description: "StLeoX"
+keyword: "StLeoX, 开源爱好者, 独立开发者, Rustaceans"
+url: "https://stleox.github.io"
+baseurl: ""
+
+
+# SNS settings
+RSS: true
+zhihu_username:   StLeoX
+gitee_username:   StLeoX
+
+
+# Build settings
+highlighter: rouge
+permalink: pretty
+paginate: 10
+exclude: ["package.json","README.md","README.zh.md"]
+anchorjs: false
+timezone: CN
+
+
+# Markdown settings
+# replace redcarpet to kramdown,
+# although redcarpet can auto highlight code, the lack of header-id make the catalog impossible, so I switch to kramdown
+# document: http://jekyllrb.com/docs/configuration/#kramdown
+markdown: kramdown
+kramdown:
+  input: GFM                            # use Github Flavored Markdown !important
+  syntax_highlighter_opts:
+    span:
+      line_numbers: false
+    block:
+      line_numbers: true
+      start_line: 1
+
+
+# Netease settings
+netease_comment: false
+
+
+# Analytics settings
+# Baidu Analytics 
+# ba_track_id: [your track id]
+
+
+# Sidebar settings
+sidebar: false                          
+
+
+# Featured Tags
+featured-tags: true                     # whether or not using Feature-Tags
+featured-condition-size: 1              # A tag will be featured if the size of it is more than this condition value
+
+
+# Progressive Web Apps
+chrome-tab-theme-color: "#000000"
+service-worker: true
+
+
+# MathJax rendering for layout:page (e.g. post preview)
+page-mathjax: false
+
+
+# Friends
+friends: [
+    {
+    #     title: "someone",
+    #     href: "http://someone"
+    }
+]
