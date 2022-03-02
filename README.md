@@ -1,4 +1,4 @@
-﻿﻿## StLeoX's HomePage
+## StLeoX's HomePage
 
 ### Why "StLeoX"?
 
@@ -6,7 +6,7 @@
 
 
 
-### Introduction
+### Intro
 
 Yet another undergraduate student from WHU CS
 
