@@ -1,0 +1,104 @@
+> ref: [如何理解 Golang 中“不要通过共享内存来通信，而应该通过通信来共享内存”？](https://www.zhihu.com/question/58004055/answer/155316307)
+>
+> ref: [对wait-free和lock-free的理解](https://zhuanlan.zhihu.com/p/342921323)
+
+
+
+## lockfree programming
+
+​	首先需要明确，lockfree programming 是指：在程序中不会显式出现 Mutex、Condition 等锁结构，但使用到的lockfree container可以使用原子锁等机制进行实现。
+
+
+
+## lockfree container
+
+​	最常用的无锁容器应该是` MPSC `，无论在什么语言里面。
+
+​	MPSC 的实现，使用到了CAS原子操作，或者是细粒度的原子锁。临界区比较短，因此对外表现出来良好的高并发性。
+
+
+
+## lockfree level
+
+> three levels: lock free / obstruction free / wait free
+
+
+
+#### Wait-free （无等待并发）
+
+​	Wait-free 指的是每一个线程都一直运行下去而无须等待外部条件，整个流程中任何操作都能在一个**确定性的、有限的步骤**内完成。这是最高的并发级别，没有任何阻塞。
+
+​	结合之前原子操作部分的知识，可以简单认为能够直接调用一个原子操作实现的算法或程序就属于Wait-free，比如下面的 increment_reference_counter 函数就是wait-free的，它封装了atomic_increment这个原子自增原语，多个线程可以同时调用这个函数对同一个内存变量进行自增，而无须任何阻塞（其实也是有阻塞的，是总线锁级别）。
+
+​	再比如，基于 llvm consequent memory model 的 std::sync::atomic::Ordering，提供 Ordering::Acquire 和 Ordering::Release 等操作，就是Wait-free级别的操作。因为经过llvm的codegen，在asm级别就是确定性的。
+
+​	与此做对比，CAS类的调用就不是wait-free的，注意wait-free的原语都不能包含内部循环，CAS原语使用时通常包含在“循环直到成功”的循环内部。
+
+```c++
+void increment_reference_counter(rc_base* obj)
+{
+  atomic_increment(obj->rc);
+}
+```
+
+
+
+#### Lock-free （无锁并发）
+
+​	Lock-free 指的是整个系统作为一个整体一直运行下去，系统内部单个线程某段时间内可能会饥饿。这是比wait-free弱的并发级别，但系统整体上看依然是没有阻塞的。所有wait-free的算法显然都满足lock-free的要求。
+
+​	Lock-free算法通常可以通过同步原语 CAS实现，例如：
+
+```c++
+void stack_push(stack* s, node* n)
+{
+  node* head;
+  do
+  {
+    head = s->head;
+    n->next = head;
+  }
+  while ( ! atomic_compare_exchange(s->head, head, n));
+}
+```
+
+​	多个线程同时调用上述函数，理论上某个线程可以一直困在循环内部，但一旦有一个线程原子操作失败而返回循环，意味着有其他线程成功执行了原子操作而退出循环，从而保证系统整体是没有阻塞的。
+
+​	其实前面的原子自增函数也可以用下面的原语实现，在这种实现里，不再是所有线程都无阻塞了，某些线程可能会因为CAS失败而回绕若干次循环。
+
+```c++
+void increment_reference_counter(rc_base* obj)
+{
+    Int rc;
+    Do {
+    rc = obj->rc;
+} while(!atomic_compare_exchange(obj->rc,rc,rc+1));
+}
+```
+
+
+
+#### Obstruction-freed （无阻塞并发）
+
+​	Obstruction-free 是指在任何时间点，一个孤立运行线程的每一个操作可以在有限步之内结束。只要没有竞争，线程就可以持续运行，一旦共享数据被修改，Obstruction-free 要求中止已经完成的部分操作，并进行回滚，obstruction-free 是并发级别更低的非阻塞并发，该算法在不出现冲突性操作的情况下提供单线程式的执行进度保证，所有 Lock-Free 的算法都是 Obstruction-free 的。
+
+
+
+#### Blocking algoithms （阻塞并发）
+
+​	阻塞类的算法是并发级别最低的同步算法，它一般需要产生阻塞。可以简单认为**基于锁的实现是阻塞并发的**。
+
+
+
+#### Different levels
+
+​	In one plot: 
+
+![lockfree levels](.\2022-07-img\lockfree levels.png)
+
+​	蓝色是阻塞的算法，绿色是非阻塞算法；
+
+​	左侧金字塔越上方，并发级别越高，性能越好；
+
+​	右侧金字塔是实现方式（原子操作、锁、互斥体等）。
+
