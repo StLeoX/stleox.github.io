@@ -1,0 +1,70 @@
+> 互联网企业中的软件研发职位，属于是 **互联网企业** 下的子话题。
+>
+> ref： 
+
+
+
+## 概述
+
+​	互联网企业中的软件研发岗（技术岗）一般划分为：前端、后端、客户端（含移动端）、数据、测试。
+
+
+
+
+
+## 前端
+
+​	不应该对前端抱有偏见，实际上前端的工作已经不局限于界面，工作量也未必少于后端。
+
+
+
+
+
+## 后端
+
+​	后端就比较传统，以及与业务密切相关了。
+
+​	后端的工作包括开发、自测、部署。
+
+
+
+
+
+## 客户端
+
+
+
+
+
+## 数据
+
+​	主要做数据分析工作，一般学历和薪资都比较高。
+
+
+
+## 测试
+
+​	测试就是为程序质量把关的。
+
+​	作为客户的代理人，测试判断软件是否满足预期设计需求。
+
+
+
+
+
+## 基础架构
+
+​	目前有趋势将 **基础架构** 从 **后端** 分离出来成为单独的一类职位。
+
+> ​	IT infrastructure refers to the composite hardware, software, network resources and services required for the existence, operation and management of an enterprise IT environment. It allows an organization to deliver IT solutions and services to its employees, partners and/or customers and is usually internal to an organization and deployed within owned facilities.
+
+
+
+
+
+## CV / NLP（算法岗）
+
+​	CV 或 NLP 之类的算法岗，仅限于部分专业方向的公司或部门，而不通用于BAT等互联网企业。
+
+
+
