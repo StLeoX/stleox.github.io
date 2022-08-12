@@ -1,0 +1,53 @@
+## C++项目规范
+
+### .idea文件夹提交进git仓库
+
+> ref： [为Git仓库里的.idea文件夹正名 - 知乎 (zhihu.com)](https://zhuanlan.zhihu.com/p/38348372)
+>
+> ref： JetBrains官方的.idea文件夹内容 [kotlin/.idea at master · JetBrains/kotlin (github.com)](https://github.com/JetBrains/kotlin/tree/master/.idea)
+
+ 建议一：如果是单人开发项目，且无计划接收他人PR，请不要将.idea文件夹提交进git仓库，而完全保存在本地。
+
+ 建议二：如果是团队开发项目（且统一IDE），或计划接收他人PR，将.idea文件夹中的以下内容提交进git仓库，同时将.idea中的其他内容严格地ignore。
+
+1. **允许**分享下面的文件：
+
+- 除了workspace.xml、usage.statistics.xml和tasks.xml以外.idea目录下的所有文件
+
+  > 例如：
+  >
+  > | 内容 | 作用 |
+  > | ---- | ---- |
+  > | .idea/vcs.xml | VCS系统信息 |
+  > | .idea/fileTemplates/ | 文件模板|
+  > | .idea/inspectionProfiles/ | 自定义检查器|
+  > | .idea/scopes/ | 自定义作用域检查 |
+  > | .idea/codeStyleSettings.xml | 代码样式 |
+  > | .idea/encodings.xml | 编码 |
+  > | .idea/copyright/ | 版权 |
+  > | .idea/compiler.xml | 编译器信息 |
+
+- 所有可以被在不同模块目录下定位到的.iml模块文件（适用于IntelliJ IDEA）
+
+2. **谨慎**分享下面的文件**：**
+
+- Android artifacts that produce a signed build，因为它们包含keystore密码（前半句不理解，暂时保留原文）
+- 在IntelliJ IDEA 13 和之前的版本中的dataSources.ids和datasources.xml文件，它们包含数据库密码
+
+3. **避免**分享下面的文件：
+
+- 对于使用Gradle或Maven的项目，避免分享.iml和.idea/modules.xml文件，因为它们会在导入时生成
+- gradle.xml文件
+- 用户字典（dictionaries文件夹）
+- .idea/libraries目录下的XML文件，因为它们会从Gradle或Maven项目中生成
+
+
+
+
+
+## C++编码规范
+
+
+
+
+
