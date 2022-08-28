@@ -189,7 +189,7 @@ auto DC(auto (*)(double) -> double) -> auto (*)(double) -> double;
 
 我们来看一看其他语言是如何弥补这个缺陷的，最简单的做法就是把 “类型” 和“动作”这两件事分开，用不同的关键字来表示。 Go 语言：
 
-```
+```go
 var a1 int
 var a2 []int
 var a3 *int
