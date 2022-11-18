@@ -2,8 +2,6 @@
 > 
 > 从今天起，希望能严肃地对待开源活动，不灌水、不烂尾，审慎地对待自己发布的内容。
 
-
-
 ## 开源写作
 
 ### 为开源项目编写README
@@ -41,5 +39,35 @@
    - 同类型项目（如果存在的话）；
    
    - 共享方式；
+
+## 开源项目维护
+
+### Code Review
+
+    CR时应当追问以下问题：
+
+- Understand the change, what it's trying to solve, and why?
+
+- How would reviewer implement the solution? Would it be different?
+
+- Can the new code break anything?
+
+- Is the code effective and qualified?
+
+- Are the new functions or methods necessary?
+
+- Are there unit tests?
+
+    CR时也需要采取以下行动：
+
+- Run the code with and without the change/commit.
+
+- Check that all new variables and imports are used.
+
+- Verify refactoring.
+
+- Check if those project documentation need to be modified.
+
+
 
 
