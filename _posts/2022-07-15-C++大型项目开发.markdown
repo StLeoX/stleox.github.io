@@ -24,10 +24,24 @@
 
     还有一个问题是，为什么不能**同时缓存多个版本的依赖**？这样我们在使用时显式指定即可。原因不清楚，但是没见过全局的管理工具是这样做的。
 
-
-
 ## 配置管理
 
 ​    实在是无法理解，为什么 C++ 项目的配置还需要写在 shell 脚本、以环境变量的形式，这种对可执行文件的古老的调用方式，应该只停留在上一世纪。
 
     现代化的做法是专门的配置文件，如 `yaml` , `json`。
+
+## 大型软件设计原则
+
+1. 三思而后行
+
+> Think twice, code once.
+
+
+
+2. 惰性地添加新特性
+
+> Delay adding new features until it is clear how the new features will be used.  
+> 
+> -- From *Google BigTable Design*
+
+    不必急于添加新特性，而应该先明确新需求。因为特性是跟随需求变化的。
