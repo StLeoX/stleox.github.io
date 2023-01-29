@@ -1,29 +1,38 @@
-## 并发编程的模型
+## 并发编程模型
 
-当今并发编程领域，主流思想就仅存在两种：
+当今并发编程领域，主流思想就仅存在两种。
 **并发编程的模型：1.多线程库(multi thread)，2.事件轮询(event loop)**
 
+## 模型细节
+
+**1.多线程库(multi thread)**
+
+    泛指各种并发体：多进程模型、多线程模型、线程库模型、协程调度模型。
+
+    多线程适用于IO密集场景**。
+
+> 例如 **Python GIL** 只允许解释器一次执行一个线程，所以能加速IO密集型任务，例如网络爬虫；但不能加速CPU密集型任务，反而引入切换开销。
+
+    相较而言，协程能同时加速CPU密集型任务，例如 goroutine GMP 能充分利用各物理线程（逻辑核），从而将计算任务均摊到各协程。
+
+    
+
+**2.事件轮询(event loop)**
+    I/O 多路复用+单/多线程（主要是单线程）。
+
+> Python 借鉴 ES6 实现的 Asyncio 库很粗糙、难用，所以 Python 有协程但是很少使用。而且作为用户态封装，Python 协程很难胜过 goroutine 等原生协程。
+> 
+> ref: [使用Asyncio和Futures python-parallel-programming-cookbook-cn 1.0 文档](https://python-parallel-programmning-cookbook.readthedocs.io/zh_CN/latest/chapter4/06_Dealing_with_Asyncio_and_Futures.html)
 
 
-## 模型细分
 
-1.多线程库(multi thread)
-多进程模型：创建新的进程处理请求
+## 模型联系
 
-多线程模型：创建新的线程处理请求
+    异步编程框架（asyncio，libuv）就是实现了一个事件循环/轮询（event loop），并暴露易用的编程接口（async，await，promise关键字等）
+    实现 event loop 的关键就在于实现 IO multiplexing；
 
-使用线程池：进程启动时预建一定数量的线程
+> select-poll-epoll 的演进过程：
+> 
+> select和poll是轮询的，epoll是回调的。
 
-2.事件轮询(event loop)
-I/O 多路复用+单/多线程（主要是单线程）
-
-
-
-## 模型间的联系
-
-异步编程框架（asyncio，libuv）就是实现了一个事件循环|轮询（event loop），并暴露易用的编程接口（async，await，promise关键字等）
-而event loop实现的关键就在于IO multiplexing；
-而IO multiplexing实现存在select-poll-epoll 的演进过程。
-
-select和poll是基于轮询的；
-epoll是基于事件和回调的；
+  
