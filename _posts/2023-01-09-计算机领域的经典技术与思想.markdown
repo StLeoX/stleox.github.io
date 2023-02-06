@@ -40,3 +40,9 @@
     举个栗子，MySQL with Sharding（like [this](https://planetscale.com)） 与 Cloud Native Database（like this） 就存在区别。前者是模拟实现，后者是原生实现。
 
     固然，原生实现系统的性能更好，但模拟实现系统的改造和使用成本更低。
+
+    
+
+## 自顶向下设计
+
+    high-level -> low-level：从顶层设计到底层实现。

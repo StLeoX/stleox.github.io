@@ -36,3 +36,19 @@
 > 直到做 DB 才觉得这个方向很合适，既有 Compiler Frontend 类似的优化手段，又是建立在 OS 这个基座上的，此外还可能涉及到 DistributedSystem 的理论，可以说是 CS 最为综合的方向不为过。
 > 
 > DB 追求的是**更快、更大、更强**，这些指标都可以进行直观的量化，这也是推动 DB 不断改进创新的因素之一。
+
+    
+
+## 我对数据库的思考
+
+    李国良老师在21对数据库发展趋势的[探讨](https://zhuanlan.zhihu.com/p/599885979)很有帮助，认为未来的四个主要发展方向：Scalability，Deployment，Hardware，DataModel。
+
+#### 关于 OLAP & DataMining
+
+    DataMining 属于第四范式，是数据密集型、基于大数据的科学研究。
+
+    将OLTP改造为OLAP其实是很有工作量的。例如，行存适用于TP而列存适用于AP，这只是很小的一个点，而不是两者的本质区别。其他还要考虑：设计适用于AP的WAL、Recovery机制等。
+
+    
+
+#### 关于 HTAP
