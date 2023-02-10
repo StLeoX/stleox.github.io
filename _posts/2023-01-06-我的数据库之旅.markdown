@@ -43,7 +43,15 @@
 
     李国良老师在21对数据库发展趋势的[探讨](https://zhuanlan.zhihu.com/p/599885979)很有帮助，认为未来的四个主要发展方向：Scalability，Deployment，Hardware，DataModel。
 
-#### 关于 OLAP & DataMining
+#### 关于 OLTP
+
+    JOIN 是 Relational Model 中最昂贵的操作，所以有两种核心的优化思路：
+
+- **反规范化关系**，DM 中常见的一张很宽的`事实表`。实际上关系的`规范化`就是用来减少关系中的冗余的（以减少表的大小等），但是为了避免 Join 计算我们避开一些规范化、在原表中保持一定的冗余。
+
+- Data Model 选为 Graph，能避免大量的 Join 计算。
+
+#### 关于 OLAP & DataMining(DM)
 
     DataMining 属于第四范式，是数据密集型、基于大数据的科学研究。
 
@@ -52,3 +60,5 @@
     
 
 #### 关于 HTAP
+
+    数据库的未来（或者说“已来”）必然是属于HTAP的。
