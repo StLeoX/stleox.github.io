@@ -250,3 +250,15 @@
     热烈、纯真，就像王小波笔下的王二。
 
     我愿做这种人。
+
+#### 23-02-23
+
+    "There are only two hard things in Computer Science: cache invalidation and naming things." -- Phil Karlton
+
+#### 23-02-24
+
+    Handling the `Crazy Busy Mode`, we can triage.
+
+#### 23-02-25
+
+    人啊，本身就是一种**极端情绪化**的生物，总是有**毁灭的冲动**，对自己觉得美好的事物、自己得不到的事物，就想毁灭之。这就是人性。
