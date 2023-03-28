@@ -72,6 +72,14 @@
 
 ### Code Commit & PR
 
-**label:"good first issue"**
+> [开源贡献方法论](https://www.tisonkun.org/2021/12/05/effective-open-source-participant/)
+
+#### 重视与社区的联结
+
+    任何开源项目都是社区驱动的，所以贡献者要重视与社区的联结，在沟通讨论中明确需求、推进开发，避免闭门造车。
+
+
+
+
 
 
