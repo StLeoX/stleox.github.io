@@ -1,0 +1,49 @@
+> **向量数据库**
+> 
+> [向量数据库介绍](https://zhuanlan.zhihu.com/p/40487710)
+> 
+> [几款多模态向量搜索引擎对比：Faiss 、milvus、Proxima、vearch、Jina等](https://zhuanlan.zhihu.com/p/364923722)
+> 
+> **ANN 算法**
+> 
+> [KNN（ANN）向量检索介绍](https://zhuanlan.zhihu.com/p/264367144)
+> 
+> [ANN 之 Product Quantization](https://zhuanlan.zhihu.com/p/140548922)
+> 
+> [使用SIMD指令加速PQ算法](https://zhuanlan.zhihu.com/p/40055107)
+> 
+> [向量索引技术介绍](https://yongyuan.name/blog/vector-ann-search.html)
+> 
+> **Faiss 框架**
+> 
+> [GitHub - facebookresearch/faiss: A library for efficient similarity search and clustering of dense vectors.](https://github.com/facebookresearch/faiss)
+> 
+> [Faiss 论文解读](https://sunpeijie0.github.io/2021/03/12/Faiss/)
+> 
+> [使用Faiss进行海量特征的相似度匹配](https://zhuanlan.zhihu.com/p/210736523)
+
+## 概念
+
+    向量数据库（VDB）属于 DB for ML 交叉领域，是 ML infra 的重要方向。
+
+    VDB 的主要场景是搜索（信息检索）与推荐。
+
+    关键技术是**高维向量数据的存储与计算**。
+
+    特性包括：ANN 查询、
+
+    
+
+## ANN 查询
+
+### PQ算法
+
+    PQ 全称 Product Quantization，是
+
+### Faiss 框架
+
+    
+
+### ANN 与 TopK
+
+

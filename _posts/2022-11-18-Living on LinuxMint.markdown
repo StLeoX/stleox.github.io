@@ -48,7 +48,11 @@
 
 - unar: all-in-one unzipper
 
+### 应用商店
 
+    UbuntuKylin 是一款面向Ubuntu及其发行版的软件仓库，特别适合中国的开发者，用来下载weixin等软件还是很不错的。
+
+    类似的还有 Deepin 的星火商店。
 
 ## 编程开发
 
@@ -67,15 +71,3 @@
 > [ref](https://sarcasm.github.io/notes/tools/stow.html)
 
   基本原理就是将用户程序库的全部内容置于`/usr/local/stow/`下，然后在外部建立符号链接（如在`/usr/local/bin/`下建立指向BIN文件的链接）。
-
-
-
-
-
-
-
-
-
-
-
-
