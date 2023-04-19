@@ -71,3 +71,10 @@
 > [ref](https://sarcasm.github.io/notes/tools/stow.html)
 
   基本原理就是将用户程序库的全部内容置于`/usr/local/stow/`下，然后在外部建立符号链接（如在`/usr/local/bin/`下建立指向BIN文件的链接）。
+
+## Linux 用户哲学
+
+**为什么我选择使用Linux**
+
+    首先是方便开发，这点是毋庸置疑的。只有这样才能真正做到开发环境与运行环境等价。
+    同时，Linux 系统时刻提醒我们，**这个世界从来不是也不可能是 bug free 的**，所谓的 bug free 只是bug复现率趋向于零的一种表现。Linux 所做的就是将生活中的 bug 复现率提高，从而提醒我们去修这些 bug。
