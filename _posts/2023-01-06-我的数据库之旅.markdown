@@ -1,14 +1,14 @@
 > 我决定今后至少两年内，将数据库作为第一研究方向。
 
-## 2022 年，国产数据库元年
+## 我的数据库之旅
 
-> [ref1: zhihu](https://www.zhihu.com/question/530189411/answer/2507987099)
+**2022 年，国产数据库元年**
 
     2022 年，国内产生了很多数据库创业公司，且将传统数据库细分到了更多垂直场景，包括 列存、时序、云原生 等。
 
-    
+    这说明数据库行业的商业化十分成熟。
 
-## 我的数据库之旅
+    
 
 **启蒙**
 
@@ -41,6 +41,16 @@
 
     
 
+**工业界**
+
+    在星环科技，采用典型的数据库系统开发职责划分，分为“存储研发团队”和“执行研发团队”，我所在的是执行研发团队中的 UDF 执行这一块，并且大部分工作目标是**语法兼容**。
+
+    ArgoDB 的产品形态就是离线数仓，定位却是实时 OLAP。这样的工作是落伍的、缺乏创造性的。
+
+    另外，关于“基础软件研发容易做成客服”，确实如此，应付各种 POC 和临时需求是大部分的工作形式，明明应该瀑布式或增量式的软件开发过程，却被做成了敏捷开发过程。
+
+    
+
 ## 我对数据库的思考
 
     李国良老师在21对数据库发展趋势的[探讨](https://zhuanlan.zhihu.com/p/599885979)很有帮助，认为未来的四个主要发展方向：Scalability，Deployment，Hardware，DataModel。
@@ -55,7 +65,7 @@
 
     
 
-#### 关于 OLAP & DataWarehouse(DW)
+#### 关于 OLAP & DW
 
     DW 是服务于 DataMining 的，后者属于科研的第四范式，是数据密集型、基于大量数据去发现知识、规律的过程。
 
@@ -64,12 +74,6 @@
     SIMD 指令本质上是**硬件实现的**向量化执行，向量程序的指令延迟和标量程序是存在本质差异的，所以 Doris 使用了 SIMD 能比软件实现向量化的数据库快若干倍。
 
     
-
-#### 关于 HTAP
-
-    数据库的未来（或者说“已来”）必然是属于HTAP的。
-
-        
 
 ## 重新思考研究方向
 
@@ -136,17 +140,13 @@
 
 **参考大神的选择**
 
-    数据库领域前辈`王润基`先生，现在关注`流式数据库`。他之前做过单机操作系统和分布式存储系统。
+1. 数据库领域前辈`王润基`先生，现在关注`流式数据库`。他之前做过单机操作系统和分布式存储系统。
 
     “为什么会转到数据库系统？-- 因为有趣！”确实，操作系统现在能取得的突破太少了，分布式存储也日趋饱和，当然数据库系统与前两者实际上存在交集的。
 
     
 
 **几个值得调研的方向**
-
-> [ref](https://zhuanlan.zhihu.com/p/510928249)
-
-    该领域细分哪些方向？
 
 - **向量数据库**。注意到VDB不是指引入向量化执行技术的数据库，而是面向向量数据存储的数据库。
 
@@ -168,7 +168,9 @@
 
     
 
-**所坚持的方向受到挑战**
+## 转型与升级
+
+#### 心态准备
 
     在数据库系统尤其是 OLAP 领域积累了一些工程经验，大致相当六个月。但是现在有换方向到机器学习系统的想法。
 
@@ -178,14 +180,114 @@
 
     所以**心态上要保持乐观，要有积极探索的勇气**，不要将探索新方向视为一种带来巨大精神压力的活动。
 
-> 决策结果：放弃了 BreezeML 这个 MLOps 的工作机会。因为 Ops 平台建设这个工作我是不太喜欢的，虽然也是 mlsys 大方向，但是感觉就很接近常规的 Web 后端服务。也就是说 mlsys 其实是有很多细分的，你要想清楚哪些细分是真正吸引人、并且能长期坚持做下去的。
+> 放弃了 BreezeML 这个 MLOps 的工作机会。因为 Ops 平台建设这个工作我是不太喜欢的，虽然也是 mlsys 大方向，但是感觉就很接近常规的 Web 后端服务。也就是说 mlsys 其实是有很多细分的，你要想清楚哪些细分是真正吸引人、并且能长期坚持做下去的。
+
+    **上一段沉没成本**：如何评估这段数据库的经验成本呢？
 
     
 
-## 工作内容
+#### 动机
 
-    在星环科技，采用典型的数据库系统开发职责划分，分为“存储研发团队”和“执行研发团队”，我所在的是执行研发团队中的 UDF 执行这一块，并且大部分工作目标是**语法兼容**。
+**为什么转出 datasys？**
 
-    ArgoDB 的产品形态就是离线数仓，定位却是实时 OLAP。这样的工作是落伍的、缺乏创造性的。
+    从业者多、市场饱和，造成行业内卷。**我不喜欢服务于红海市场**。
 
-    另外，关于“基础软件研发容易做成客服”，确实如此，应付各种 POC 和临时需求是大部分的工作形式，明明应该瀑布式或增量式的软件开发过程，却被做成了敏捷开发过程。
+    datasys 技术发展速度放缓。考虑到数据库领域的特殊性，直接看顶会的创新性有下降。
+
+    技术门槛逐渐降低。
+
+    
+
+**为什么转入 mlsys？**
+
+    首先 mlsys 是结合 ml 的。至于下一步 ml 从业人员会不会转入 mlsys，我认为是存在可能性的。
+
+    实际上，mlsys 从业者也很多，但是 mlsys 的学科细分更加丰富。
+
+    
+
+# 参考
+
+[ref1: 目前国内有众多创业数据库公司，数据库内核去哪家公司](https://www.zhihu.com/question/530189411/answer/2507987099)
+
+[ref: 五年谷歌ML Infra生涯，我学到最重要的3个教训](https://zhuanlan.zhihu.com/p/510928249)
+
+
+
+**readings**
+## 数据库系统
+[BigData魔法盒 - 知乎](https://www.zhihu.com/column/c_1225812232481046528)
+[大数据面试&成神之路 - 知乎](https://www.zhihu.com/column/c_1334538640740335616)
+[database - 收藏夹 - 知乎](https://www.zhihu.com/collection/606465899)
+[分布式存储的七方面问题 - 知乎](https://www.zhihu.com/column/c_1036557865221173248)
+[paper学习 - 知乎](https://www.zhihu.com/column/c_1449351860348362752)
+[Materialization Strategy · PaperReview](https://baoshengwang.gitbooks.io/paperreview/content/c-store/materialization-strategy.html)
+[Database & CMU 15445 - 知乎](https://www.zhihu.com/column/c_1553383727870459904)
+[TiDB源码学习笔记 - 知乎](https://www.zhihu.com/column/c_1315587024388947968)
+[zhisheng的博客，Tag: Flink](http://www.54tianzhisheng.cn/tags/Flink/)
+[Jark's Blog，分类: Flink](http://wuchong.me/categories/Flink/)
+[优化器技术论文学习 - 知乎](https://www.zhihu.com/column/c_1364661018229141504)
+[数据库home - 知乎](https://www.zhihu.com/column/c_1365244747041275904)
+[数据库系统论文阅读笔记 - 知乎](https://www.zhihu.com/column/c_1452728003868946432)
+[数据库及存储技术 - 知乎](https://www.zhihu.com/column/c_167095045)
+[分布式和存储的那些事 - 知乎](https://www.zhihu.com/column/distributed-storage)
+[数据库内核 - 知乎](https://www.zhihu.com/column/c_206071340)
+[数据库论文阅读 - 知乎](https://www.zhihu.com/column/c_1391443930878152704)
+[数据库前沿技术 - 知乎](https://www.zhihu.com/column/c_190483659)
+[DB Paper Reading - 知乎](https://www.zhihu.com/column/c_1440347225616953344)
+[数据库经典论文学习-计算引擎 - 知乎](https://www.zhihu.com/column/c_1590335398940659712)
+[数据库经典论文学习-优化器&执行器 - 知乎](https://www.zhihu.com/column/c_1590335398940659712)
+[IO-meter](https://io-meter.com/)
+[谭新宇的博客](https://tanxinyu.work/)
+[Papers](https://mwhittaker.github.io/papers/)
+[Paper Trail](https://www.the-paper-trail.org/)
+[Readings in distributed systems](https://christophermeiklejohn.com/distributed/systems/2013/07/12/readings-in-distributed-systems.html)
+[有态度的HBase/Spark/BigData](http://hbasefly.com/)
+[公开课笔记 - open-courses](https://zhenghe.gitbook.io/open-courses/)
+[TiDB 源码阅读系列文章（一）序 - 知乎](https://zhuanlan.zhihu.com/p/36500508)
+[大数据知识分享 - 知乎](https://www.zhihu.com/column/c_1226155932691943424)
+[分布式数据库 - 知乎](https://www.zhihu.com/column/c_126076715)
+[分布式数据系统小菜 - 知乎](https://zhuanlan.zhihu.com/io-meter)
+[MySQL Notes - 知乎](https://www.zhihu.com/column/c_1271447104075182080)
+[MySQL内核 - 知乎](https://www.zhihu.com/column/c_1459644399081058304)
+[Greenplum的全部内容 - 腾讯云开发者社区-腾讯云](https://cloud.tencent.com/developer/column/72497)
+[所有文章 - 叉鸽 MrCroxx 的博客](http://blog.mrcroxx.com/posts/)
+[数据系统论文阅读小组 - 知乎](https://www.zhihu.com/column/db-readings)
+[数据库系统论文阅读笔记 - 知乎](https://www.zhihu.com/column/c_1452728003868946432)
+[数据库开发 - 知乎](https://www.zhihu.com/column/c_145592370)
+[openGauss系列文章 - 知乎](https://www.zhihu.com/column/c_1399385679651135489)
+[Fu Zhe's Blog，标签: Database](https://fuzhe1989.github.io/tags/Database/)
+[酷哥说库 - 知乎](https://www.zhihu.com/column/c_1383470351893024768)
+[MySQL内核揭秘 - 知乎](https://www.zhihu.com/column/360infra)
+[数据库及存储技术 - 知乎](https://www.zhihu.com/column/c_167095045)
+[cassandra专栏 - 知乎](https://www.zhihu.com/column/c_201187146)
+[分布式、存储笔记 - 知乎](https://www.zhihu.com/column/c_181108752)
+[PostgreSQL - 知乎](https://www.zhihu.com/column/c_1162025279425327104)
+[Paper Reading - 知乎](https://www.zhihu.com/column/c_1460006084769046528)
+[Databend 内幕大揭秘](https://psiace.github.io/databend-internals/)
+[Bruce Momjian: Postgres Administration Presentations](https://momjian.us/main/presentations/administration.html)
+[Storage Engine - Database Internals](https://sinsay.github.io/db/part_1_storage_engine.html)
+
+## 分布式系统
+[什么才算是真正的编程能力？ - 知乎](https://www.zhihu.com/question/31034164/answer/553533545)
+[机器学习系统：设计和实现 — 机器学习系统：设计和实现 1.0.0 documentation](https://openmlsys.github.io/index.html)
+[高并发的哲学原理（一）-- 找出单点，进行拆分 - 岁寒](https://lvwenhan.com/tech-epic/499.html)
+[凤凰架构](https://icyfenix.cn/[凤凰架构：构建可靠的大型分布式系统)
+[Paxos、Raft分布式一致性最佳实践 - 知乎](https://www.zhihu.com/column/paxos)
+[Patterns of Distributed Systems](https://martinfowler.com/articles/patterns-of-distributed-systems/)
+[fucking-translation/patterns-of-distributed-systems: 《Patterns of Distributed Systems》中文版](https://github.com/fucking-translation/patterns-of-distributed-systems)
+[Kongfy's Blog - good good code, day day up!](http://blog.kongfy.com/)
+[分布式领域经典论文 - 知乎](https://www.zhihu.com/column/c_1042727519522476032)
+[分布式和存储的那些事 - 知乎](https://www.zhihu.com/column/distributed-storage)
+[分布式系统 - 知乎](https://www.zhihu.com/column/c_1269187001473196032)
+[分布式系统 - 知乎](https://www.zhihu.com/column/distributed-sys)
+[分布式系统 - 知乎](https://www.zhihu.com/column/c_1276106093996306432)
+[分布式点滴 - 知乎](https://www.zhihu.com/column/learn-distributed-system)
+[强力研分布式系统 - 知乎](https://www.zhihu.com/column/c_1278840901029654528)
+[用谁都能看懂的方法解释分布式系统, 大概.. - 知乎](https://www.zhihu.com/column/c_158208519)
+[分布式系统论文笔记目录 - 知乎](https://zhuanlan.zhihu.com/p/34427903)
+[OpenACID Blog](https://blog.openacid.com/)
+[Notes - Stephen Holiday](https://stephenholiday.com/notes/)
+[Peter Bailis, Peter Bailis: Highly Available, Seldom Consistent](http://www.bailis.org/blog/)
+[Notebook of a researcher in distributed systems, Read, Write, Execute](http://hh360.user.srcf.net/blog/)
+[donnemartin/system-design-primer: Learn how to design large-scale systems.](https://github.com/donnemartin/system-design-primer)
