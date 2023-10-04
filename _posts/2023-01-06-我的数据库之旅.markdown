@@ -170,7 +170,7 @@
 
 ## 转型与升级
 
-#### 心态准备
+#### 心态建设
 
     在数据库系统尤其是 OLAP 领域积累了一些工程经验，大致相当六个月。但是现在有换方向到机器学习系统的想法。
 
@@ -190,13 +190,19 @@
 
 **为什么转出 datasys？**
 
-    从业者多、市场饱和，造成行业内卷。**我不喜欢服务于红海市场**。
+    1.**我不喜欢服务于红海市场**。2.承认“沉没成本”的存在。
+
+    从业者多、市场饱和、技术门槛逐渐降低，**造成行业内卷**，所以有人戏称 DB 为“dead business”。
 
     datasys 技术发展速度放缓。考虑到数据库领域的特殊性，直接看顶会的创新性有下降。
 
-    技术门槛逐渐降低。
+    数据库存储：我也只是知道基本原理，但是深入的话就缺少兴趣。技术难点无非 LSM Tree，Raft，Index，PAX。
 
-    
+    数据库计算：我感觉理论已经到头了，没什么新的架构出现，所以余下的都是工程。技术难点无非 Vectorized，Compilation。
+
+    数据模型：图数据库确实很有趣，但感觉也没什么需求了。向量数据库。
+
+
 
 **为什么转入 mlsys？**
 
@@ -206,16 +212,24 @@
 
     
 
+**为什么转入 cloud-native？**
+
+    这个选择首先是被动的。
+
+    cn 相对来说比较蓝海吧。
+
+    
+
 # 参考
 
 [ref1: 目前国内有众多创业数据库公司，数据库内核去哪家公司](https://www.zhihu.com/question/530189411/answer/2507987099)
 
 [ref: 五年谷歌ML Infra生涯，我学到最重要的3个教训](https://zhuanlan.zhihu.com/p/510928249)
 
-
-
 **readings**
+
 ## 数据库系统
+
 [BigData魔法盒 - 知乎](https://www.zhihu.com/column/c_1225812232481046528)
 [大数据面试&成神之路 - 知乎](https://www.zhihu.com/column/c_1334538640740335616)
 [database - 收藏夹 - 知乎](https://www.zhihu.com/collection/606465899)
@@ -269,6 +283,7 @@
 [Storage Engine - Database Internals](https://sinsay.github.io/db/part_1_storage_engine.html)
 
 ## 分布式系统
+
 [什么才算是真正的编程能力？ - 知乎](https://www.zhihu.com/question/31034164/answer/553533545)
 [机器学习系统：设计和实现 — 机器学习系统：设计和实现 1.0.0 documentation](https://openmlsys.github.io/index.html)
 [高并发的哲学原理（一）-- 找出单点，进行拆分 - 岁寒](https://lvwenhan.com/tech-epic/499.html)
