@@ -44,7 +44,7 @@
 
     
 
-**关于 BigTable 与数据库系统**
+**BigTable 与数据库系统**
 
     首先 BigTable 是不是数据库系统？结论如下：BigTable 是无模式的数据库系统，是 NoSQL 数据库先驱。“无模式”是指不像关系型数据库那样预定义 Data Schema，这样的**数据模型**同样体现在之后的诸多 NoSQL 上，例如 Redis、HBase、Dynamo。
 
@@ -55,3 +55,11 @@
 > 两者的不同之处在于，Redis 会提供简单的 ACID 特性，但 XML 不支持一丁点的 ACID 特性。
 
     BigTable 的数据模型为：稀疏的、多维度的、有序的映射（Map），即： (row:string, column:string,time:int64)->string。
+
+    
+
+**DFS 与数据库系统**
+
+    DFS 是文件系统，是 BigTable 的基石。
+
+    DFS 引入数据块（Data Chunk）这一级抽象，与数据库从存储的角度引入数据记录（Record），两者之间有相似之处。
