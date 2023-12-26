@@ -67,9 +67,6 @@
 
 ​    边缘计算现在只做IaaS资源和容器云就够消化三年市场红利，将来会出现（除了CDN之外）所有行业的PaaS边缘云。
 
-**A Typical Architecture**：
-
-![img](./asset/img/TKE@Edge Arch.png)
 
 ## 机器学习
 
