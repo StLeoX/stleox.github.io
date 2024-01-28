@@ -98,6 +98,12 @@
 
     
 
+**提示生成代码**
+
+    程序可以划分为即抛型程序和稳定型程序，llm 辅助编程更适用于前者，例如写一段 bash 完成某个 ad hoc 的文本处理需求。
+
+    
+
 ### 代码审查
 
     代码审查的一些基本态度，来自于我的生产实践：
@@ -119,3 +125,9 @@
     
 
 ## 经验驱动的设计
+
+    
+
+# 参考
+
+[Fitten Code vs Copilot](https://mp.weixin.qq.com/s/gJP94KbiwBKRqSwdx5jqSA)
