@@ -15,9 +15,13 @@
 - 算法开发（数据分析、推荐、AI等）；
 - 基础设施开发（数据库系统、容器平台）；
 
+    
+
 ## 前端
 
 ​    不应该对前端抱有偏见，实际上前端的工作已经不局限于界面，工作量也未必少于后端。
+
+    
 
 ## 后端
 
@@ -25,11 +29,15 @@
 
 ​    后端的工作包括开发、自测、部署。
 
+    
+
 ## 客户端
 
 ## 数据
 
 > ref: https://zhuanlan.zhihu.com/p/433634211
+
+    
 
 ### 数据工程研发
 
@@ -38,6 +46,8 @@
 ​    数据工程研发关注的是底层数据存储和处理引擎或数据平台的研发，属于系统研发的范畴。
 
 ​    技术栈涵盖 Hadoop、Spark、Flink。
+
+    
 
 ### 数据研发
 
@@ -53,11 +63,15 @@
 
 ​    技术栈涵盖SQL、Python。
 
+    
+
 ### 数据库内核
 
 > 在招聘网站上对应的岗位：**数据库内核研发工程师，分布式存储研发工程师**。
 
 ​    一般所说的数据库开发都是指数据库内核开发，数据库内核是一个非常复杂而庞大的系统，专业程度极高。
+
+    
 
 ### 数据中台
 
@@ -65,8 +79,9 @@
 > 
 > 数据中台不是指一个具体的职位，而是在企业内设定的部门。
 
-
 ​    数据中台是数据采集连通、统一治理、建模分析和服务应用于一体的综合性数据能力平台，为企业数智化转型提供能力底座。
+
+    
 
 ## 测试
 
@@ -74,11 +89,15 @@
 
 ​    作为客户的代理人，测试判断软件是否满足预期设计需求。
 
+    
+
 ## 基础架构
 
 ​    目前有趋势将 **基础架构** 从 **后端** 分离出来成为单独的一类职位。
 
 > ​    IT infrastructure refers to the composite hardware, software, network resources and services required for the existence, operation and management of an enterprise IT environment. It allows an organization to deliver IT solutions and services to its employees, partners and/or customers and is usually internal to an organization and deployed within owned facilities.
+
+
 
 ## CV / NLP（算法岗）
 
